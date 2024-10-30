@@ -11,6 +11,8 @@ namespace Project2WooxTravel.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         TravelContext context = new TravelContext();
+
+        [Authorize]  // login olmadan erişim sağlamasına izin vermiyor.
         public ActionResult CategoryList()
         {
             var values = context.Categories.ToList();
